@@ -1,11 +1,13 @@
 `include "defines.v"
+`define INSTR_MEM_ADDR_BITS = 10;
 
 module instructionMem (rst, addr, instruction);
   input rst;
   input [`WORD_LEN-1:0] addr;
   output [`WORD_LEN-1:0] instruction;
 
-  wire [$clog2(`INSTR_MEM_SIZE)-1:0] address = addr[$clog2(`INSTR_MEM_SIZE)-1:0];
+  wire [INSTR_MEM_ADDR_BITS-1:0] address
+  assign address = addr[INSTR_MEM_ADDR_BITS+1:2];
   reg [`MEM_CELL_SIZE-1:0] instMem [0:`INSTR_MEM_SIZE-1];
 
   always @ (*) begin
@@ -310,4 +312,4 @@ module instructionMem (rst, addr, instruction);
     end
 
   assign instruction = {instMem[address], instMem[address + 1], instMem[address + 2], instMem[address + 3]};
-endmodule // insttructionMem
+endmodule // instructionMem

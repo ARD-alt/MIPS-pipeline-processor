@@ -15,4 +15,4 @@ module testbench ();
     #100
     rst = 0;
   end
-endmodule // test
+endmodule

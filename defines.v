@@ -19,7 +19,6 @@
 `define OP_OR 6'b000110
 `define OP_NOR 6'b000111
 `define OP_XOR 6'b001000
-`define OP_SLA 6'b001001
 `define OP_SLL 6'b001010
 `define OP_SRA 6'b001011
 `define OP_SRL 6'b001100
@@ -31,7 +30,7 @@
 `define OP_BNE 6'b101001
 `define OP_JMP 6'b101010
 
-// To be used in side ALU
+// To be used inside ALU
 `define EXE_ADD 4'b0000
 `define EXE_SUB 4'b0010
 `define EXE_AND 4'b0100

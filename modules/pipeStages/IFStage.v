@@ -5,11 +5,11 @@ module IFStage (clk, rst, brTaken, brOffset, freeze, PC, instruction);
   input [`WORD_LEN-1:0] brOffset;
   output [`WORD_LEN-1:0] PC, instruction;
 
-  wire [`WORD_LEN-1:0] adderIn1, adderOut, brOffserTimes4;
+  wire [`WORD_LEN-1:0] adderIn1, adderOut, brOffsetTimes4;
 
   mux #(.LENGTH(`WORD_LEN)) adderInput (
     .in1(32'd4),
-    .in2(brOffserTimes4),
+    .in2(brOffsetTimes4),
     .sel(brTaken),
     .out(adderIn1)
   );
@@ -34,5 +34,5 @@ module IFStage (clk, rst, brTaken, brOffset, freeze, PC, instruction);
     .instruction(instruction)
   );
 
-  assign brOffserTimes4 = brOffset << 2;
+  assign brOffsetTimes4 = brOffset << 2;
 endmodule // IFStage

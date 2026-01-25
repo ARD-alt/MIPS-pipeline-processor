@@ -65,9 +65,9 @@ module MIPS_Processor (input CLOCK_50, input rst, input forward_EN);
 		.ST_val_sel(ST_val_sel)
 	);
 
-	//###########################
-	//##### PIPLINE STAGES ######
-	//###########################
+	
+	//PIPELINE STAGES 
+	
 	IFStage IFStage (
 		// INPUTS
 		.clk(clock),
@@ -142,9 +142,9 @@ module MIPS_Processor (input CLOCK_50, input rst, input forward_EN);
 		.WB_res(WB_result)
 	);
 
-	//############################
-	//#### PIPLINE REGISTERS #####
-	//############################
+	
+	//PIPELINE REGISTERS
+	
 	IF2ID IF2IDReg (
 		// INPUTS
 		.clk(clock),

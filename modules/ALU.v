@@ -13,10 +13,9 @@ module ALU (val1, val2, EXE_CMD, aluOut);
       `EXE_OR: aluOut <= val1 | val2;
       `EXE_NOR: aluOut <= ~(val1 | val2);
       `EXE_XOR: aluOut <= val1 ^ val2;
-      `EXE_SLA: aluOut <= val1 << val2;
-      `EXE_SLL: aluOut <= val1 <<< val2;
-      `EXE_SRA: aluOut <= val1 >> val2;
-      `EXE_SRL: aluOut <= val1 >>> val2;
+      `EXE_SLL: aluOut <= val1 << val2;
+      `EXE_SRA: aluOut <= val1 >>> val2;
+      `EXE_SRL: aluOut <= val1 >> val2;
       default: aluOut <= 0;
     endcase
   end

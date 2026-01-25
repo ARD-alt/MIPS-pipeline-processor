@@ -4,7 +4,7 @@ module IF2ID (clk, rst, flush, freeze, PCIn, instructionIn, PC, instruction);
   input clk, rst, flush, freeze;
   input [`WORD_LEN-1:0] PCIn, instructionIn;
   output reg [`WORD_LEN-1:0] PC, instruction;
-
+//freeze is put to counter data hazard (without data forwarding)
   always @ (posedge clk) begin
     if (rst) begin
       PC <= 0;

@@ -6,7 +6,7 @@ module mux #(parameter integer LENGTH) (in1, in2, sel, out);
   output [LENGTH-1:0] out;
 
   assign out = (sel == 0) ? in1 : in2;
-endmodule // mxu
+endmodule 
 
 module mux_3input #(parameter integer LENGTH) (in1, in2, in3, sel, out);
   input [LENGTH-1:0] in1, in2, in3;
