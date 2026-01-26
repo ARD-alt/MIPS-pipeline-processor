@@ -6,13 +6,13 @@ module instructionMem (rst, addr, instruction);
   input [`WORD_LEN-1:0] addr;
   output [`WORD_LEN-1:0] instruction;
 
-  wire [INSTR_MEM_ADDR_BITS-1:0] address
-  assign address = addr[INSTR_MEM_ADDR_BITS+1:2];
+  wire [INSTR_MEM_ADDR_BITS-1:0] address //Address splitting
+  assign address = addr[INSTR_MEM_ADDR_BITS-1:0]; //can't ignore LSB 00 as memory is byte addressable
   reg [`MEM_CELL_SIZE-1:0] instMem [0:`INSTR_MEM_SIZE-1];
 
   always @ (*) begin
   	if (rst) begin
-        // No nop added in between instructions since there is a hazard detection unit
+       
 
         instMem[0] <= 8'b10000000; //-- Addi	r1,r0,10
         instMem[1] <= 8'b00100000;

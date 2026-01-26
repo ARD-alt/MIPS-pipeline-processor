@@ -6,7 +6,7 @@ DESTINATION_FILE_NAME = "ready_instructions.txt"
 INSTR_MEM_ARRAY_NAME = "instMem"
 
 line_count = int(input("Enter the number of instructions to rearrange: "))
-source_file_name = input("Enter the source file name: ")
+source_file_name = input("Enter the source file name: ") # named source_code.txt in docs
 
 instructions = []
 
@@ -23,5 +23,5 @@ with open(DESTINATION_FILE_NAME, "w") as dest_file:
         dest_file.write(INSTR_MEM_ARRAY_NAME + "[" + str(i*4+3) + "] <= 8'b" + instr[24:32] + ";\n\n")
 
 
-print ("💡💡💡 ==> instructions reformatted for instruction memory.")
+print ("Instructions reformatted for instruction memory.")
 print ("To run them, copy and paste the content of ready_instructions.txt under the reset if statement in the instructionMem.v always statement.")
